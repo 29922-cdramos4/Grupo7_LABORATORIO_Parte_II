@@ -1,0 +1,18 @@
+body, html {
+    font-family: "Bebas Neue", sans-serif;
+}
+
+#momentos {
+    background: #020024;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    color: white;
+}
+
+footer {
+    background: url('./../img/fondo.webp') no-repeat center center;
+    background-size: cover;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    display: block;
+}
