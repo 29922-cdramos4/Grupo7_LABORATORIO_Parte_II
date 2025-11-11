@@ -777,12 +777,46 @@
                   data-bs-content="Máximo 500 caracteres. Puedes comentar sobre partidos, árbitros, equipos, etc."&gt;&lt;/textarea&gt;
     &lt;/div&gt;
 
-    &lt;button type="submit" class="btn btn-primary w-100" 
-            data-bs-toggle="tooltip" data-bs-placement="top" 
-            title="Envía tu formulario completo"&gt;
-        Enviar Sugerencia
+    &lt;button type="button" class="btn btn-primary w-100" id="sendButton"
+            data-bs-container="body" data-bs-toggle="popover" 
+            data-bs-placement="top" title="Confirmar Envío" 
+            data-bs-content="¿Estás seguro de que quieres enviar el formulario?"&gt;
+        &lt;i class="fas fa-paper-plane"&gt;&lt;/i&gt; Enviar Sugerencia
     &lt;/button&gt;
-&lt;/form&gt;</code></pre>
+&lt;/form&gt;
+
+&lt;script&gt;
+// Popover de confirmación para el botón enviar
+document.addEventListener('DOMContentLoaded', function() {
+    var sendButton = document.getElementById('sendButton');
+    var form = sendButton.closest('form');
+    
+    var sendPopover = new bootstrap.Popover(sendButton, {
+        boundary: document.body,
+        trigger: 'manual',
+        html: true,
+        content: `
+            &lt;div class="text-center"&gt;
+                &lt;p class="mb-3"&gt;¿Estás seguro de que quieres enviar el formulario?&lt;/p&gt;
+                &lt;div class="d-flex gap-2 justify-content-center"&gt;
+                    &lt;button type="button" class="btn btn-success btn-sm" id="confirmSend"&gt;
+                        Sí, Enviar
+                    &lt;/button&gt;
+                    &lt;button type="button" class="btn btn-secondary btn-sm" id="cancelSend"&gt;
+                        Cancelar
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        `,
+        title: 'Confirmar Envío'
+    });
+
+    sendButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        sendPopover.show();
+    });
+});
+&lt;/script&gt;</code></pre>
                         </div>
                     </div>
                     
