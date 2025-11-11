@@ -25,6 +25,10 @@
                     <li class="nav-item"><a class="nav-link" href="#header">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#momentos">Mejores momentos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#programacion">Programación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#teoria">Teoría</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#video">Vídeo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ejemplo">Ejemplo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ejercicio">Ejercicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#sugerencias">Sugerencias</a></li>
                 </ul>
             </div>
@@ -545,6 +549,69 @@
             </div>
         </div>
 
+    <section id="teoria" class="py-5 arriba">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>Teoría</h2>
+                    <p class="lead">Breve explicación teórica sobre la competición, reglas y formato de la UEFA Champions League.</p>
+                </div>
+                <div class="col-md-8 offset-md-2 mt-3">
+                    <p>La UEFA Champions League es una competición por eliminación que incluye fases de grupos y rondas de eliminación directa. Aquí puedes añadir material teórico, enlaces y referencias para profundizar en los conceptos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="video" class="py-5 izquierda">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>Vídeo</h2>
+                    <p class="lead">Contenido multimedia relacionado con la temática.</p>
+                </div>
+                <div class="col-md-8 offset-md-2 mt-3">
+                    <!-- Example embedded video (replace src with actual URL) -->
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Vídeo de ejemplo" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ejemplo" class="py-5 derecha">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>Ejemplo</h2>
+                    <p class="lead">Ejemplo práctico que ilustra un concepto o ejercicio resuelto.</p>
+                </div>
+                <div class="col-md-8 offset-md-2 mt-3">
+                    <p>Aquí puedes colocar un ejemplo paso a paso o una demostración breve.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ejercicio" class="py-5 abajo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>Ejercicio</h2>
+                    <p class="lead">Actividad propuesta para practicar lo aprendido.</p>
+                </div>
+                <div class="col-md-8 offset-md-2 mt-3">
+                    <ol>
+                        <li>Analiza un partido reciente y determina las claves tácticas.</li>
+                        <li>Resume en 150 palabras cómo un equipo logró su victoria.</li>
+                        <li>Propón una mejora para el rendimiento del equipo.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer id="sugerencias" class="abajo">
         <div class="container-fluid py-5">
             <div class="row justify-content-center">
@@ -608,6 +675,27 @@
             duration: 2000,
             origin: 'bottom',
             distance: '300px'
+        });
+        // Reveal the new content sections
+        sr.reveal('#teoria', {
+            duration: 1200,
+            origin: 'top',
+            distance: '40px'
+        });
+        sr.reveal('#video', {
+            duration: 1200,
+            origin: 'left',
+            distance: '40px'
+        });
+        sr.reveal('#ejemplo', {
+            duration: 1200,
+            origin: 'right',
+            distance: '40px'
+        });
+        sr.reveal('#ejercicio', {
+            duration: 1200,
+            origin: 'bottom',
+            distance: '40px'
         });
         sr.reveal('button, .btn, input[type="button"], input[type="submit"]', {
             duration: 600,
