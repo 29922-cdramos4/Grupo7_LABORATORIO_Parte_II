@@ -29,7 +29,6 @@
                     <li class="nav-item"><a class="nav-link" href="#video">Vídeo</a></li>
                     <li class="nav-item"><a class="nav-link" href="#ejemplo">Ejemplo</a></li>
                     <li class="nav-item"><a class="nav-link" href="#ejercicio">Ejercicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#sugerencias">Sugerencias</a></li>
                 </ul>
             </div>
         </div>
@@ -554,10 +553,26 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h2>Teoría</h2>
-                    <p class="lead">Breve explicación teórica sobre la competición, reglas y formato de la UEFA Champions League.</p>
+                    <p class="lead">Tooltip y Popover: Componentes interactivos para mejorar la experiencia de usuario.</p>
                 </div>
                 <div class="col-md-8 offset-md-2 mt-3">
-                    <p>La UEFA Champions League es una competición por eliminación que incluye fases de grupos y rondas de eliminación directa. Aquí puedes añadir material teórico, enlaces y referencias para profundizar en los conceptos.</p>
+                    <h4>¿Qué es un Tooltip?</h4>
+                    <p>Un <strong>tooltip</strong> es un pequeño elemento emergente que aparece cuando el usuario coloca el cursor sobre un elemento específico. Proporciona información adicional sin ocupar espacio permanente en la interfaz.</p>
+                    
+                    <h4 class="mt-4">¿Qué es un Popover?</h4>
+                    <p>Un <strong>popover</strong> es un contenedor más grande que aparece al hacer clic o interactuar con un elemento. A diferencia del tooltip, puede contener texto formateado, botones, imágenes y otros elementos HTML.</p>
+                    
+                    <h4 class="mt-4">Diferencias principales:</h4>
+                    <ul>
+                        <li><strong>Activación:</strong> Tooltips se activan al pasar el cursor (hover), popovers requieren clic.</li>
+                        <li><strong>Contenido:</strong> Tooltips contienen texto simple, popovers pueden incluir HTML complejo.</li>
+                        <li><strong>Duración:</strong> Tooltips desaparecen al quitar el cursor, popovers permanecen hasta ser cerrados.</li>
+                        <li><strong>Tamaño:</strong> Tooltips son pequeños y discretos, popovers pueden ser más grandes.</li>
+                    </ul>
+                    
+                    <h4 class="mt-4">Casos de uso:</h4>
+                    <p><strong>Tooltips:</strong> Explicar iconos, mostrar información adicional sobre campos de formulario, proporcionar ayuda contextual.</p>
+                    <p><strong>Popovers:</strong> Formularios pequeños, menús de configuración, información detallada, confirmaciones de acciones.</p>
                 </div>
             </div>
         </div>
@@ -571,9 +586,12 @@
                     <p class="lead">Contenido multimedia relacionado con la temática.</p>
                 </div>
                 <div class="col-md-8 offset-md-2 mt-3">
-                    <!-- Example embedded video (replace src with actual URL) -->
+                    <!-- Local video file -->
                     <div class="ratio ratio-16x9">
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Vídeo de ejemplo" allowfullscreen></iframe>
+                        <video controls class="w-100 h-100">
+                            <source src="../Capítulo 7 -Tooltip y Popover.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de video HTML5.
+                        </video>
                     </div>
                 </div>
             </div>
@@ -585,10 +603,120 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h2>Ejemplo</h2>
-                    <p class="lead">Ejemplo práctico que ilustra un concepto o ejercicio resuelto.</p>
+                    <p class="lead">Ejemplo práctico de Tooltips con Bootstrap</p>
                 </div>
-                <div class="col-md-8 offset-md-2 mt-3">
-                    <p>Aquí puedes colocar un ejemplo paso a paso o una demostración breve.</p>
+                <div class="col-md-10 offset-md-1 mt-3">
+                    <h4>Código HTML:</h4>
+                    <pre class="bg-dark text-light p-3 rounded"><code>&lt;div class="container"&gt;
+    &lt;h1&gt;Tooltips&lt;/h1&gt;&lt;br&gt;
+    
+    &lt;div class="row"&gt;
+        &lt;div class="col-xs-12 col-sm-3"&gt;
+            &lt;button class="btn btn-primary btn-block" data-toggle="tooltip" 
+                    data-placement="left" title="Izquierda"&gt;Presionar 1&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="col-xs-12 col-sm-3"&gt;
+            &lt;button class="btn btn-primary btn-block" data-toggle="tooltip" 
+                    data-placement="top" title="Superior"&gt;Presionar 2&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="col-xs-12 col-sm-3"&gt;
+            &lt;button class="btn btn-primary btn-block" data-toggle="tooltip" 
+                    data-placement="right" title="Derecha"&gt;Presionar 3&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="col-xs-12 col-sm-3"&gt;
+            &lt;button class="btn btn-primary btn-block" data-toggle="tooltip" 
+                    data-placement="bottom" title="Inferior"&gt;Presionar 4&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    
+                    <h4 class="mt-4">Demostración en vivo:</h4>
+                    <div class="border p-4 bg-light rounded">
+                        <div class="row g-3 justify-content-center">
+                            <div class="col-12 col-sm-6 col-lg-3 text-center">
+                                <button class="btn btn-primary w-100 py-2" data-bs-toggle="tooltip" 
+                                        data-bs-placement="left" title="Tooltip a la izquierda">Presionar 1</button>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 text-center">
+                                <button class="btn btn-primary w-100 py-2" data-bs-toggle="tooltip" 
+                                        data-bs-placement="top" title="Tooltip superior">Presionar 2</button>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 text-center">
+                                <button class="btn btn-primary w-100 py-2" data-bs-toggle="tooltip" 
+                                        data-bs-placement="right" title="Tooltip a la derecha">Presionar 3</button>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 text-center">
+                                <button class="btn btn-primary w-100 py-2" data-bs-toggle="tooltip" 
+                                        data-bs-placement="bottom" title="Tooltip inferior">Presionar 4</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-3">
+                        <button id="initTooltips" class="btn btn-success">Activar Tooltips</button>
+                        <small class="d-block text-muted mt-2">Haz clic para activar/desactivar tooltips. Cuando estén activos, pasa el cursor sobre los botones azules</small>
+                    </div>
+                    
+                    <hr class="my-5">
+                    
+                    <h4>Código HTML para Popovers:</h4>
+                    <pre class="bg-dark text-light p-3 rounded"><code>&lt;div class="container"&gt;
+    &lt;h1&gt;Popover&lt;/h1&gt;&lt;br&gt;
+    
+    &lt;div class="row"&gt;
+        &lt;div class="col-xs-12 col-sm-3"&gt;
+            &lt;button class="btn btn-info btn-block" data-container="body" 
+                    data-toggle="popover" data-placement="left" data-content="Lorem"&gt;Presionar 1&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="col-xs-12 col-sm-3"&gt;
+            &lt;button class="btn btn-info btn-block" data-container="body" 
+                    data-toggle="popover" data-placement="top" data-content="Lorem"&gt;Presionar 2&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="col-xs-12 col-sm-3"&gt;
+            &lt;button class="btn btn-info btn-block" data-container="body" 
+                    data-toggle="popover" data-placement="right" data-content="Lorem"&gt;Presionar 3&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="col-xs-12 col-sm-3"&gt;
+            &lt;button class="btn btn-info btn-block" data-container="body" 
+                    data-toggle="popover" data-placement="bottom" data-content="Lorem"&gt;Presionar 4&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    
+                    <h4 class="mt-4">Demostración de Popovers:</h4>
+                    <div class="border p-4 bg-light rounded">
+                        <div class="row g-3 justify-content-center">
+                            <div class="col-12 col-sm-6 col-lg-3 text-center">
+                                <button class="btn btn-info w-100 py-2" data-bs-container="body" 
+                                        data-bs-toggle="popover" data-bs-placement="left" 
+                                        data-bs-content="Este es un popover que aparece a la izquierda del botón cuando haces clic. Haz clic de nuevo para cerrarlo."
+                                        title="Popover Izquierdo">Presionar 1</button>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 text-center">
+                                <button class="btn btn-info w-100 py-2" data-bs-container="body" 
+                                        data-bs-toggle="popover" data-bs-placement="top" 
+                                        data-bs-content="Este popover se muestra arriba del botón. Puedes cerrarlo haciendo clic en el botón otra vez."
+                                        title="Popover Superior">Presionar 2</button>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 text-center">
+                                <button class="btn btn-info w-100 py-2" data-bs-container="body" 
+                                        data-bs-toggle="popover" data-bs-placement="right" 
+                                        data-bs-content="Este popover aparece a la derecha y también se puede cerrar con un clic."
+                                        title="Popover Derecho">Presionar 3</button>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 text-center">
+                                <button class="btn btn-info w-100 py-2" data-bs-container="body" 
+                                        data-bs-toggle="popover" data-bs-placement="bottom" 
+                                        data-bs-content="Los popovers pueden contener texto más largo y se cierran al hacer clic en el botón que los activó."
+                                        title="Popover Inferior">Presionar 4</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-3">
+                        <button id="initPopovers" class="btn btn-warning">Activar Popovers</button>
+                        <small class="d-block text-muted mt-2">Haz clic para activar/desactivar popovers. Cuando estén activos, haz clic en los botones naranjas</small>
+                    </div>
                 </div>
             </div>
         </div>
@@ -598,58 +726,137 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h2>Ejercicio</h2>
-                    <p class="lead">Actividad propuesta para practicar lo aprendido.</p>
+                    <h2>Ejercicio y Sugerencias</h2>
+                    <p class="lead">Formulario interactivo con tooltips y popovers aplicados - ¡Practica lo aprendido!</p>
                 </div>
-                <div class="col-md-8 offset-md-2 mt-3">
-                    <ol>
-                        <li>Analiza un partido reciente y determina las claves tácticas.</li>
-                        <li>Resume en 150 palabras cómo un equipo logró su victoria.</li>
-                        <li>Propón una mejora para el rendimiento del equipo.</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="col-md-10 offset-md-1 mt-3">
+                    <!-- Collapsible Code Block -->
+                    <div class="text-center mb-4">
+                        <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#codeExample" aria-expanded="false" aria-controls="codeExample">
+                            <i class="fas fa-code"></i> Mostrar/Ocultar Código HTML
+                        </button>
+                    </div>
+                    
+                    <div class="collapse" id="codeExample">
+                        <div class="card card-body mb-4">
+                            <h5>Código HTML del Formulario con Tooltips y Popovers:</h5>
+                            <pre class="bg-dark text-light p-3 rounded"><code>&lt;form&gt;
+    &lt;div class="mb-3"&gt;
+        &lt;label class="form-label"&gt;
+            Nombre 
+            &lt;i class="fas fa-info-circle" data-bs-toggle="tooltip" 
+               data-bs-placement="top" title="Ingresa tu nombre completo"&gt;&lt;/i&gt;
+        &lt;/label&gt;
+        &lt;input type="text" placeholder="Nombre" class="form-control" 
+               data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" 
+               title="Ayuda para Nombre" 
+               data-bs-content="Escribe tu nombre y apellido. Mínimo 2 caracteres."&gt;
+    &lt;/div&gt;
 
-    <footer id="sugerencias" class="abajo">
-        <div class="container-fluid py-5">
-            <div class="row justify-content-center">
-                <div class="col-md-5">
-                    <div class="card shadow">
-                        <div class="card-body">
-                            <div class="mb-4">
-                                <h4 class="mb-2">¿Tienes una sugerencia o queja sobre fútbol?</h4>
-                                <p class="text-muted mb-0">Si quieres comentarnos algo sobre partidos, árbitros, alineaciones, la cobertura de la Champions League o cualquier aspecto relacionado con el fútbol, escríbenos abajo. Tu opinión nos ayuda a mejorar la experiencia para todos los aficionados.</p>
+    &lt;div class="mb-3"&gt;
+        &lt;label class="form-label"&gt;
+            Correo Electrónico 
+            &lt;i class="fas fa-info-circle" data-bs-toggle="tooltip" 
+               data-bs-placement="top" title="Debe ser un email válido"&gt;&lt;/i&gt;
+        &lt;/label&gt;
+        &lt;input type="email" placeholder="correo@ejemplo.com" class="form-control" 
+               data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" 
+               title="Formato de Email" 
+               data-bs-content="Ejemplo: usuario@dominio.com"&gt;
+    &lt;/div&gt;
+
+    &lt;div class="mb-3"&gt;
+        &lt;label class="form-label"&gt;
+            Mensaje 
+            &lt;i class="fas fa-info-circle" data-bs-toggle="tooltip" 
+               data-bs-placement="top" title="Comparte tus ideas sobre fútbol"&gt;&lt;/i&gt;
+        &lt;/label&gt;
+        &lt;textarea rows="5" placeholder="Escribe tu mensaje aquí..." 
+                  class="form-control" data-bs-container="body" data-bs-toggle="popover" 
+                  data-bs-placement="bottom" title="Consejos para el Mensaje" 
+                  data-bs-content="Máximo 500 caracteres. Puedes comentar sobre partidos, árbitros, equipos, etc."&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+
+    &lt;button type="submit" class="btn btn-primary w-100" 
+            data-bs-toggle="tooltip" data-bs-placement="top" 
+            title="Envía tu formulario completo"&gt;
+        Enviar Sugerencia
+    &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <!-- Interactive Form -->
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-md-8">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <div class="mb-4">
+                                        <h4 class="mb-2">¿Tienes una sugerencia sobre fútbol o quieres practicar tooltips y popovers?</h4>
+                                        <p class="text-muted mb-0">Usa este formulario interactivo para enviar comentarios sobre la Champions League. Haz hover sobre los íconos <i class="fas fa-info-circle text-primary"></i> para ver tooltips y haz clic en los campos para ver popovers con ayuda detallada.</p>
+                                    </div>
+                                    
+                                    <form>
+                                        <div class="mb-3">
+                                            <label class="form-label">
+                                                Nombre 
+                                                <i class="fas fa-info-circle text-primary" data-bs-toggle="tooltip" 
+                                                   data-bs-placement="top" title="Ingresa tu nombre completo"></i>
+                                            </label>
+                                            <input type="text" placeholder="Nombre" class="form-control" 
+                                                   data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" 
+                                                   title="Ayuda para Nombre" 
+                                                   data-bs-content="Escribe tu nombre y apellido. Mínimo 2 caracteres.">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">
+                                                Correo Electrónico 
+                                                <i class="fas fa-info-circle text-primary" data-bs-toggle="tooltip" 
+                                                   data-bs-placement="top" title="Debe ser un email válido"></i>
+                                            </label>
+                                            <input type="email" placeholder="correo@ejemplo.com" class="form-control" 
+                                                   data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" 
+                                                   title="Formato de Email" 
+                                                   data-bs-content="Ejemplo: usuario@dominio.com. Debe incluir @ y un dominio válido.">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">
+                                                Mensaje 
+                                                <i class="fas fa-info-circle text-primary" data-bs-toggle="tooltip" 
+                                                   data-bs-placement="top" title="Comparte tus ideas sobre fútbol"></i>
+                                            </label>
+                                            <textarea rows="5" placeholder="Escribe tu mensaje aquí..." 
+                                                      class="form-control" data-bs-container="body" data-bs-toggle="popover" 
+                                                      data-bs-placement="bottom" title="Consejos para el Mensaje" 
+                                                      data-bs-content="Máximo 500 caracteres. Puedes comentar sobre partidos, árbitros, equipos, alineaciones, cobertura de Champions League, etc."></textarea>
+                                        </div>
+
+                                        <button type="button" class="btn btn-primary w-100" id="sendButton"
+                                                data-bs-container="body" data-bs-toggle="popover" 
+                                                data-bs-placement="top" title="Confirmar Envío" 
+                                                data-bs-content="¿Estás seguro de que quieres enviar el formulario? Asegúrate de que todos los campos estén completos y sean correctos.">
+                                            <i class="fas fa-paper-plane"></i> Enviar Sugerencia
+                                        </button>
+                                    </form>
+                                    
+                                    <div class="text-center mt-4">
+                                        <small class="text-muted">
+                                            <strong>Instrucciones:</strong> Los íconos <i class="fas fa-info-circle text-primary"></i> muestran tooltips al pasar el cursor. 
+                                            Los campos del formulario tienen popovers que se activan al hacer clic (requiere que los popovers estén activados).
+                                        </small>
+                                    </div>
+                                </div>
                             </div>
-                            <form>
-                                <div class="mb-3">
-                                    <input type="text" placeholder="Nombre" class="form-control">
-                                </div>
-
-                                <div class="mb-3">
-                                    <input type="email" placeholder="Correo Electrónico" class="form-control">
-                                </div>
-
-                                <div class="mb-3">
-                                    <textarea rows="5" placeholder="Mensaje" class="form-control"></textarea>
-                                </div>
-
-                                <button type="submit" class="btn btn-outline-secondary w-100">
-                                    Enviar
-                                </button>
-                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script>
         window.sr = ScrollReveal();
         sr.reveal('.navbar', {
@@ -710,6 +917,7 @@
     </script>
     
     <script>
+      // Smooth scrolling for navbar links
       document.querySelectorAll('.navbar .nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
           e.preventDefault();
@@ -726,6 +934,207 @@
           if (navbarCollapse && typeof bootstrap !== 'undefined') {
             const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse);
             bsCollapse.hide();
+          }
+        });
+      });
+
+      // Tooltip initialization with proper placement handling
+      document.getElementById('initTooltips').addEventListener('click', function() {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        
+        // Check if tooltips are currently active
+        var isActive = this.textContent.includes('Activados');
+        
+        if (isActive) {
+          // Deactivate tooltips
+          tooltipTriggerList.forEach(function(tooltipTriggerEl) {
+            var tooltipInstance = bootstrap.Tooltip.getInstance(tooltipTriggerEl);
+            if (tooltipInstance) {
+              tooltipInstance.dispose();
+            }
+          });
+          
+          // Reset button
+          this.textContent = 'Activar Tooltips';
+          this.className = 'btn btn-success';
+          this.disabled = false;
+          
+          console.log('Tooltips deactivated');
+        } else {
+          // Activate tooltips
+          tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+            new bootstrap.Tooltip(tooltipTriggerEl, {
+              boundary: 'viewport',
+              fallbackPlacements: ['auto'],
+              sanitize: false,
+              animation: true,
+              trigger: 'hover focus',
+              delay: { "show": 100, "hide": 100 }
+            });
+          });
+          
+          // Update button
+          this.textContent = 'Tooltips Activados ✓';
+          this.className = 'btn btn-info';
+          this.disabled = false;
+          
+          console.log('Tooltips activated');
+        }
+      });
+
+      // Popover initialization with proper placement handling
+      document.getElementById('initPopovers').addEventListener('click', function() {
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+        
+        // Check if popovers are currently active
+        var isActive = this.textContent.includes('Activados');
+        
+        if (isActive) {
+          // Deactivate popovers
+          popoverTriggerList.forEach(function(popoverTriggerEl) {
+            var popoverInstance = bootstrap.Popover.getInstance(popoverTriggerEl);
+            if (popoverInstance) {
+              popoverInstance.dispose();
+            }
+            // Remove event listeners
+            popoverTriggerEl.replaceWith(popoverTriggerEl.cloneNode(true));
+          });
+          
+          // Remove document click listener by removing and re-adding
+          document.removeEventListener('click', this.documentClickHandler);
+          
+          // Reset button
+          this.textContent = 'Activar Popovers';
+          this.className = 'btn btn-warning';
+          this.disabled = false;
+          
+          console.log('Popovers deactivated');
+        } else {
+          // Activate popovers
+          // Get fresh list after potential cloning
+          popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+          
+          popoverTriggerList.forEach(function (popoverTriggerEl) {
+            // Determine trigger type based on element type
+            var trigger = 'manual';
+            var isFormField = (popoverTriggerEl.tagName.toLowerCase() === 'input' || 
+                              popoverTriggerEl.tagName.toLowerCase() === 'textarea');
+            
+            if (isFormField) {
+              trigger = 'click';
+            }
+            
+            var popover = new bootstrap.Popover(popoverTriggerEl, {
+              boundary: document.body,
+              fallbackPlacements: [],
+              sanitize: false,
+              animation: true,
+              trigger: trigger,
+              html: true,
+              offset: [0, 8]
+            });
+            
+            // Add manual click handling for buttons only
+            if (!isFormField) {
+              popoverTriggerEl.addEventListener('click', function(e) {
+                e.stopPropagation();
+                // Close all other manual popovers first
+                popoverTriggerList.forEach(function(otherEl) {
+                  if (otherEl !== popoverTriggerEl && 
+                      (otherEl.tagName.toLowerCase() === 'button')) {
+                    var otherPopover = bootstrap.Popover.getInstance(otherEl);
+                    if (otherPopover) {
+                      otherPopover.hide();
+                    }
+                  }
+                });
+                // Toggle this popover
+                popover.toggle();
+              });
+            }
+          });
+          
+          // Store the click handler for removal later
+          this.documentClickHandler = function(e) {
+            popoverTriggerList.forEach(function(popoverTriggerEl) {
+              var popoverInstance = bootstrap.Popover.getInstance(popoverTriggerEl);
+              if (popoverInstance && !popoverTriggerEl.contains(e.target) && 
+                  !e.target.closest('.popover')) {
+                popoverInstance.hide();
+              }
+            });
+          };
+          
+          // Hide all popovers when clicking outside
+          document.addEventListener('click', this.documentClickHandler);
+          
+          // Update button
+          this.textContent = 'Popovers Activados ✓';
+          this.className = 'btn btn-secondary';
+          this.disabled = false;
+          
+          console.log('Popovers activated with mixed triggers');
+        }
+      });
+
+      // Send button confirmation popover
+      document.addEventListener('DOMContentLoaded', function() {
+        var sendButton = document.getElementById('sendButton');
+        var form = sendButton.closest('form');
+        
+        // Initialize send button popover
+        var sendPopover = new bootstrap.Popover(sendButton, {
+          boundary: document.body,
+          sanitize: false,
+          animation: true,
+          trigger: 'manual',
+          html: true,
+          content: `
+            <div class="text-center">
+              <p class="mb-3">¿Estás seguro de que quieres enviar el formulario?</p>
+              <div class="d-flex gap-2 justify-content-center">
+                <button type="button" class="btn btn-success btn-sm" id="confirmSend">
+                  <i class="fas fa-check"></i> Sí, Enviar
+                </button>
+                <button type="button" class="btn btn-secondary btn-sm" id="cancelSend">
+                  <i class="fas fa-times"></i> Cancelar
+                </button>
+              </div>
+            </div>
+          `,
+          title: '<i class="fas fa-paper-plane"></i> Confirmar Envío'
+        });
+
+        // Show confirmation popover when clicking send button
+        sendButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          sendPopover.show();
+          
+          // Add event listeners for confirmation buttons
+          setTimeout(function() {
+            var confirmBtn = document.getElementById('confirmSend');
+            var cancelBtn = document.getElementById('cancelSend');
+            
+            if (confirmBtn) {
+              confirmBtn.addEventListener('click', function() {
+                sendPopover.hide();
+                // Submit the form
+                form.submit();
+              });
+            }
+            
+            if (cancelBtn) {
+              cancelBtn.addEventListener('click', function() {
+                sendPopover.hide();
+              });
+            }
+          }, 100);
+        });
+
+        // Hide popover when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!sendButton.contains(e.target) && !e.target.closest('.popover')) {
+            sendPopover.hide();
           }
         });
       });
